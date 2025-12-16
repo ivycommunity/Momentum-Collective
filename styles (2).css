@@ -603,6 +603,7 @@ p {
     pointer-events: none;
     z-index: 1;
 }
+
 /* Mission & Vision Section */
 .mission-vision {
     padding: 5rem 0;
@@ -615,8 +616,7 @@ p {
     gap: 3rem;
 }
 
-.mission-card,
-.vision-card {
+.mission-card, .vision-card {
     background: white;
     padding: 3rem;
     border-radius: 20px;
@@ -627,8 +627,7 @@ p {
     overflow: hidden;
 }
 
-.mission-card::before,
-.vision-card::before {
+.mission-card::before, .vision-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -638,8 +637,7 @@ p {
     background: var(--gradient-primary);
 }
 
-.mission-icon,
-.vision-icon {
+.mission-icon, .vision-icon {
     width: 80px;
     height: 80px;
     background: var(--gradient-primary);
@@ -652,66 +650,27 @@ p {
     color: white;
 }
 
-.mission-card h3,
-.vision-card h3 {
+.mission-card h3, .vision-card h3 {
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
 }
-.mission-vision-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 3rem;
-    align-items: stretch;
-    /* <-- CRITICAL: Makes both cards the same height */
-    margin-top: 3rem;
-    /* Add space below a potential section header */
-}
 
-.mission-card,
-.vision-card {
-    background: var(--bg-primary);
-    padding: 3rem;
-    border-radius: 20px;
-    box-shadow: var(--shadow-lg);
-    /* Use a standard shadow variable */
-    text-align: center;
-    border: 1px solid var(--border-color);
-    position: relative;
-    overflow: hidden;
-    /* ADD FLEXBOX FOR VERTICAL ALIGNMENT */
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
-}
-
-.mission-card:hover,
-.vision-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
-}
-
-.mission-card p,
-.vision-card p {
-    flex-grow: 1;
-    /* <-- CRITICAL: Pushes the motto to the bottom of the card */
+.mission-card p, .vision-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1.1rem;
     margin-bottom: 2rem;
 }
 
-/* Ensure the motto is always at the bottom */
 .motto {
-    margin-top: auto;
-    /* <-- CRITICAL: Pushes the motto block down */
-    background: var(--gradient-primary);
-    color: var(--text-light);
+    background: rgba(139, 92, 246, 0.1);
     padding: 1rem 2rem;
-    /* Adjusted padding for standard sizing */
     border-radius: 12px;
     display: inline-block;
-    font-style: normal;
-    /* Override italic if needed */
-    font-weight: 600;
+    font-style: italic;
+    color: var(--primary);
 }
 
 /* Ecosystem Section */
@@ -722,24 +681,17 @@ p {
 
 .ecosystem-grid {
     display: grid;
-    /* Adjust minmax to be slightly smaller to fit on smaller desktop screens */
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 3rem;
-    align-items: stretch;
-    /* <-- CRITICAL: Makes both cards the same height */
-    margin-top: 3rem;
 }
 
 .ecosystem-card {
-    background: var(--bg-primary);
+    background: white;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* ADD FLEXBOX FOR CARD CONTENT */
-    display: flex;
-    flex-direction: column;
 }
 
 .ecosystem-card:hover {
@@ -754,30 +706,7 @@ p {
     align-items: center;
     gap: 1.5rem;
 }
-/* Ensure content and features are structured correctly inside the card */
-.ecosystem-content {
-    padding: 2.5rem;
-    flex-grow: 1;
-    /* Allows the content area to grow */
-    display: flex;
-    flex-direction: column;
-}
-.ecosystem-content p {
-    flex-grow: 1;
-    /* Ensures the paragraph pushes the features down */
-    line-height: 1.7;
-    margin-bottom: 2rem;
-}
-.ecosystem-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: auto;
-    /* <-- CRITICAL: Pushes the feature list to the bottom */
-    padding-top: 1.5rem;
-    /* Add separation from content */
-    border-top: 1px solid var(--border-color);
-}
+
 .labs-card .ecosystem-header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     flex-direction: column;
@@ -786,95 +715,10 @@ p {
     padding: 3rem 2rem;
 }
 
-/* =====================================
-   Momentum Foundation – Final Styles
-   ===================================== */
-
-.foundation-card {
-    background: #ffffff;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Header */
 .foundation-card .ecosystem-header {
     background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.5rem;
-    padding: 3rem 2rem;
 }
 
-/* Logo */
-.foundation-card .ecosystem-logo {
-    width: 80px;
-    height: 80px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.foundation-card .ecosystem-logo img {
-    width: 60%;
-    height: auto;
-}
-
-/* Title & tagline */
-.foundation-card .ecosystem-info h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 0.25rem;
-}
-
-.foundation-card .ecosystem-tagline {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-/* Content */
-.foundation-card .ecosystem-content {
-    padding: 2.5rem 2rem;
-}
-
-.foundation-card .ecosystem-content p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #4b5563;
-    margin-bottom: 2rem;
-}
-
-/* Features */
-.foundation-card .ecosystem-features {
-    display: flex;
-    justify-content: center;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-}
-
-.foundation-card .feature {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #f9fafb;
-    padding: 0.6rem 1rem;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #374151;
-}
-
-/* Hover */
-.foundation-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-}
 .ecosystem-logo {
     width: 120px;
     height: 120px;
@@ -2689,26 +2533,4 @@ img[src=""] {
 .app-btn {
     max-width: 200px;
     display: block;
-}
-/* Global Consistency */
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    line-height: 1.6;
-    /* Standard line height for readability */
-    color: var(--text-primary);
-    background-color: var(--bg-primary);
-    padding-top: 5rem;
-    /* Add global padding for fixed navbar */
-}
-
-/* Ensure Sections have consistent vertical space */
-main section {
-    padding: 5rem 0;
-    /* Apply consistent vertical padding to all main sections */
-}
-
-/* Section Header (Defined under Core Values, make it global) */
-.section-header {
-    text-align: center;
-    margin-bottom: 4rem;
 }
