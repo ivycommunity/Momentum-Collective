@@ -603,6 +603,7 @@ p {
     pointer-events: none;
     z-index: 1;
 }
+
 /* Mission & Vision Section */
 .mission-vision {
     padding: 5rem 0;
@@ -615,8 +616,7 @@ p {
     gap: 3rem;
 }
 
-.mission-card,
-.vision-card {
+.mission-card, .vision-card {
     background: white;
     padding: 3rem;
     border-radius: 20px;
@@ -627,8 +627,7 @@ p {
     overflow: hidden;
 }
 
-.mission-card::before,
-.vision-card::before {
+.mission-card::before, .vision-card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -638,8 +637,7 @@ p {
     background: var(--gradient-primary);
 }
 
-.mission-icon,
-.vision-icon {
+.mission-icon, .vision-icon {
     width: 80px;
     height: 80px;
     background: var(--gradient-primary);
@@ -652,66 +650,27 @@ p {
     color: white;
 }
 
-.mission-card h3,
-.vision-card h3 {
+.mission-card h3, .vision-card h3 {
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
 }
-.mission-vision-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 3rem;
-    align-items: stretch;
-    /* <-- CRITICAL: Makes both cards the same height */
-    margin-top: 3rem;
-    /* Add space below a potential section header */
-}
 
-.mission-card,
-.vision-card {
-    background: var(--bg-primary);
-    padding: 3rem;
-    border-radius: 20px;
-    box-shadow: var(--shadow-lg);
-    /* Use a standard shadow variable */
-    text-align: center;
-    border: 1px solid var(--border-color);
-    position: relative;
-    overflow: hidden;
-    /* ADD FLEXBOX FOR VERTICAL ALIGNMENT */
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
-}
-
-.mission-card:hover,
-.vision-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
-}
-
-.mission-card p,
-.vision-card p {
-    flex-grow: 1;
-    /* <-- CRITICAL: Pushes the motto to the bottom of the card */
+.mission-card p, .vision-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-size: 1.1rem;
     margin-bottom: 2rem;
 }
 
-/* Ensure the motto is always at the bottom */
 .motto {
-    margin-top: auto;
-    /* <-- CRITICAL: Pushes the motto block down */
-    background: var(--gradient-primary);
-    color: var(--text-light);
+    background: rgba(139, 92, 246, 0.1);
     padding: 1rem 2rem;
-    /* Adjusted padding for standard sizing */
     border-radius: 12px;
     display: inline-block;
-    font-style: normal;
-    /* Override italic if needed */
-    font-weight: 600;
+    font-style: italic;
+    color: var(--primary);
 }
 
 /* Ecosystem Section */
@@ -722,24 +681,17 @@ p {
 
 .ecosystem-grid {
     display: grid;
-    /* Adjust minmax to be slightly smaller to fit on smaller desktop screens */
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 3rem;
-    align-items: stretch;
-    /* <-- CRITICAL: Makes both cards the same height */
-    margin-top: 3rem;
 }
 
 .ecosystem-card {
-    background: var(--bg-primary);
+    background: white;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* ADD FLEXBOX FOR CARD CONTENT */
-    display: flex;
-    flex-direction: column;
 }
 
 .ecosystem-card:hover {
@@ -749,130 +701,24 @@ p {
 
 .ecosystem-header {
     background: var(--gradient-primary);
-    padding: 3rem 2rem;
+    padding: 2rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
     gap: 1.5rem;
 }
-/* Ensure content and features are structured correctly inside the card */
-.ecosystem-content {
-    padding: 2.5rem;
-    flex-grow: 1;
-    /* Allows the content area to grow */
-    display: flex;
-    flex-direction: column;
-}
-.ecosystem-content p {
-    flex-grow: 1;
-    /* Ensures the paragraph pushes the features down */
-    line-height: 1.7;
-    margin-bottom: 2rem;
-}
-.ecosystem-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: auto;
-    /* <-- CRITICAL: Pushes the feature list to the bottom */
-    padding-top: 1.5rem;
-    /* Add separation from content */
-    border-top: 1px solid var(--border-color);
-}
+
 .labs-card .ecosystem-header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-/* =====================================
-   Momentum Foundation – Final Styles
-   ===================================== */
-
-.foundation-card {
-    background: #ffffff;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Header */
-.foundation-card .ecosystem-header {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    display: flex;
     flex-direction: column;
-    align-items: center;
     text-align: center;
     gap: 1.5rem;
     padding: 3rem 2rem;
 }
 
-/* Logo */
-.foundation-card .ecosystem-logo {
-    width: 80px;
-    height: 80px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.foundation-card .ecosystem-header {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
 
-.foundation-card .ecosystem-logo img {
-    width: 60%;
-    height: auto;
-}
-
-/* Title & tagline */
-.foundation-card .ecosystem-info h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 0.25rem;
-}
-
-.foundation-card .ecosystem-tagline {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-/* Content */
-.foundation-card .ecosystem-content {
-    padding: 2.5rem 2rem;
-}
-
-.foundation-card .ecosystem-content p {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #4b5563;
-    margin-bottom: 2rem;
-}
-
-/* Features */
-.foundation-card .ecosystem-features {
-    display: flex;
-    justify-content: center;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-}
-
-.foundation-card .feature {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: #f9fafb;
-    padding: 0.6rem 1rem;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #374151;
-}
-
-/* Hover */
-.foundation-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-}
 .ecosystem-logo {
     width: 120px;
     height: 120px;
@@ -893,6 +739,12 @@ p {
     display: block;
 }
 
+.labs-logo {
+    background-image: url('assets/momentum-labs.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 .ecosystem-info h3 {
     font-size: 1.75rem;
@@ -929,10 +781,12 @@ p {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    background: rgba(139, 92, 246, 0.1);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 600;
+    color: var(--primary);
 }
 
 .feature i {
@@ -1074,107 +928,89 @@ p {
     line-height: 1.7;
 }
 
+/* Creative Suite - Grid Layout */
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
 .app-card {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 3rem 2rem;
     border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    padding: 1.75rem 1.25rem;
-    text-align: center;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
+    text-align: center;
+    border: 1px solid rgba(196, 181, 253, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.app-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
 .app-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-12px) scale(1.02);
     box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
-    border-color: rgba(139, 92, 246, 0.2);
+    border-color: rgba(139, 92, 246, 0.5);
 }
 
-.app-card > .btn {
-    margin-top: auto;
+.app-card:hover::before {
+    transform: scaleX(1);
 }
 
-.app-icon-component {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 1rem;
+.app-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
     background: var(--gradient-primary);
-    border-radius: 16px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
     flex-shrink: 0;
-    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.25);
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
     transition: all 0.3s ease;
 }
 
-.app-icon-component:hover {
-    transform: scale(1.05) rotate(3deg);
+.app-icon:hover {
+    transform: scale(1.05);
     box-shadow: 0 12px 32px rgba(139, 92, 246, 0.3);
 }
 
-.app-icon-component img {
-    width: 40px;
-    height: 40px;
+.app-icon img {
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     position: relative;
     z-index: 1;
 }
 
-.app-icon-component i {
-    font-size: 1.5rem;
-    color: white;
-}
-
-.app-info .app-name {
-    font-size: 1.35rem;
-    font-weight: 700;
-    margin-bottom: 0.35rem;
+.app-card h4 {
     color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .app-tagline {
     color: var(--primary-color);
     font-weight: 600;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-}
-
-.business-suite .app-tagline {
-    color: var(--text-secondary);
-}
-
-.app-description {
-    color: var(--text-secondary);
-    font-weight: 400;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 0;
-}
-
-.app-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-    flex: 1;
-}
-
-.app-card > .btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .app-description {
@@ -1226,6 +1062,84 @@ p {
 
 .glow-on-hover:hover::after {
     opacity: 0.3;
+}
+.business-suite-cascade {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.business-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.business-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--gradient-primary);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.business-item:hover {
+    transform: translateX(12px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.4);
+}
+
+.business-item:hover::before {
+    transform: scaleY(1);
+}
+
+.business-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-primary);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+    transition: all 0.3s ease;
+}
+
+.business-item:hover .business-icon {
+    transform: scale(1.1);
+    box-shadow: 0 12px 32px rgba(139, 92, 246, 0.3);
+}
+
+.business-content {
+    flex: 1;
+}
+
+.business-content h4 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.business-content p {
+    color: var(--text-secondary);
+    margin: 0;
 }
 
 /* Services Section */
@@ -1498,6 +1412,7 @@ p {
     background: var(--bg-darker);
     color: var(--text-muted);
     padding: 2rem 0;
+    margin-top: 2rem;
 }
 
 .footer-content {
@@ -2047,40 +1962,36 @@ p {
         gap: 2rem;
     }
     
+    .apps-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
     .app-card {
-        padding: 1.5rem 1rem;
+        padding: 2.5rem 2rem;
     }
     
-    .app-icon-component {
-        width: 56px;
-        height: 56px;
-        border-radius: 14px;
+    .app-icon {
+        width: 80px;
+        height: 80px;
     }
     
-    .app-icon-component img {
-        width: 36px;
-        height: 36px;
+    .app-icon img {
+        width: 50px;
+        height: 50px;
     }
     
-    .app-icon-component i {
-        font-size: 1.25rem;
+    .business-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 2rem;
     }
     
-    .app-info .app-name {
-        font-size: 1.15rem;
-    }
-
-    .app-tagline {
-        font-size: 0.9rem;
-    }
-
-    .app-description {
-        font-size: 0.85rem;
-    }
-
-    .app-card > .btn {
-        font-size: 0.9rem;
-        padding: 0.625rem 1.25rem;
+    .business-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
     }
     
     .services {
@@ -2219,6 +2130,10 @@ p {
         padding: 1.5rem;
     }
     
+    .business-item {
+        padding: 1rem;
+    }
+    
     .service-card {
         padding: 1.5rem;
     }
@@ -2352,8 +2267,20 @@ img[src=""] {
 }
 
 /* Enhanced Icon Animations */
-.app-icon-component {
+.app-icon {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-card:hover .app-icon {
+    transform: scale(1.05) rotate(3deg);
+}
+
+.business-icon {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.business-item:hover .business-icon {
+    transform: scale(1.1) rotate(-5deg);
 }
 
 .service-icon {
@@ -2552,16 +2479,34 @@ img[src=""] {
     .hero {
         padding-top: 2rem;
     }
-    
-    .app-icon-component {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .app-icon-component img {
-        width: 50px;
-        height: 50px;
-    }
+}
+.app-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    background: var(--gradient-primary);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+    transition: all 0.3s ease;
+}
+
+.app-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(139, 92, 246, 0.3);
+}
+
+.app-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
 }
 
 .app-content-wrapper {
@@ -2588,26 +2533,4 @@ img[src=""] {
 .app-btn {
     max-width: 200px;
     display: block;
-}
-/* Global Consistency */
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    line-height: 1.6;
-    /* Standard line height for readability */
-    color: var(--text-primary);
-    background-color: var(--bg-primary);
-    padding-top: 5rem;
-    /* Add global padding for fixed navbar */
-}
-
-/* Ensure Sections have consistent vertical space */
-main section {
-    padding: 5rem 0;
-    /* Apply consistent vertical padding to all main sections */
-}
-
-/* Section Header (Defined under Core Values, make it global) */
-.section-header {
-    text-align: center;
-    margin-bottom: 4rem;
 }
