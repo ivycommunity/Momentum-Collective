@@ -365,8 +365,8 @@ window.addEventListener('scroll', debouncedScrollHandler);
 
 // Enhanced Card Interactions
 document.addEventListener('DOMContentLoaded', function() {
-    // Add magnetic effect to cards
-    const cards = document.querySelectorAll('.app-card, .service-card');
+    // Add magnetic effect to service cards only (not app cards)
+    const cards = document.querySelectorAll('.service-card');
     
     cards.forEach(card => {
         card.addEventListener('mousemove', function(e) {
